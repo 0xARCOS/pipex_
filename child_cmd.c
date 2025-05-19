@@ -12,35 +12,35 @@
 
 #include "pipex.h"
 
-char    **get_paths_from_envp(char **envp)
+char	**get_paths_from_envp(char **envp)
 {
-    int     i;
-    char    *path_line;
+	int		i;
+	char	*path_line;
 
-    i = 0;
-    while (envp[i])
-    {
-        if (ft_strncmp(envp[i], "PATH=", 5) == 0)
-        {
-            path_line = envp[i] + 5;
-            return (ft_split(path_line, ':'));
-        }
-        i++;
-    }
-    return (NULL);
+	i = 0;
+	while (envp[i])
+	{
+		if (ft_strncmp(envp[i], "PATH=", 5) == 0)
+		{
+			path_line = envp[i] + 5;
+			return (ft_split(path_line, ':'));
+		}
+		i++;
+	}
+	return (NULL);
 }
 
-char *join_path_cmd(char *path, char *cmd)
+char	*join_path_cmd(char *path, char *cmd)
 {
-    char    *tmp;
-    char    *full_cmd;
+	char	*tmp;
+	char	*full_cmd;
 
-    tmp = ft_strjoin(path, "/");
-    if(!tmp)
-        return (NULL);
-    full_cmd = ft_strjoin(tmp, cmd);
-    free(tmp);
-    return (full_cmd);
+	tmp = ft_strjoin(path, "/");
+	if (!tmp)
+		return (NULL);
+	full_cmd = ft_strjoin(tmp, cmd);
+	free(tmp);
+	return (full_cmd);
 }
 
 static void	try_exec_paths(char **paths, char **cmd_args, char **envp)
@@ -58,7 +58,6 @@ static void	try_exec_paths(char **paths, char **cmd_args, char **envp)
 		i++;
 	}
 }
-
 
 void	child_cmd(char *cmd, char **envp, int input_fd, int output_fd)
 {

@@ -60,4 +60,3 @@ void	close_all(int infile, int outfile, int *pipefd)
 	close(infile);
 	close(outfile);
 }
-

@@ -1,13 +1,11 @@
 #ifndef PIPEX_H
 # define PIPEX_H
 
-# include <unistd.h>
-# include <stdlib.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include <stdlib.h>
 # include <sys/wait.h>
-
-
+# include <unistd.h>
 
 // Funciones principales
 void	pipex(char **argv, char **envp);
@@ -25,6 +23,5 @@ char	*join_path_cmd(char *path, char *cmd);
 int		ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, int n);
 char	*ft_strjoin(const char *s1, const char *s2);
-
 
 #endif

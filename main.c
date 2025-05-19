@@ -12,13 +12,13 @@
 
 #include "pipex.h"
 
-int main(int argc, char **argv, char **envp)
+int	main(int argc, char **argv, char **envp)
 {
-    if (argc != 5)
-    {
-        write(2, "Usage: ./pipex infile cmd1 cmd2 outfile", 40);
-        return (1);
-    }
-    pipex(argv, envp);
-    return (0);
+	if (argc != 5)
+	{
+		write(2, "Usage: ./pipex infile cmd1 cmd2 outfile", 40);
+		return (1);
+	}
+	pipex(argv, envp);
+	return (0);
 }

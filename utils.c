@@ -12,10 +12,10 @@
 
 #include "pipex.h"
 
-void error_exit(const char *msg)
+void	error_exit(const char *msg)
 {
-    perror(msg);
-    exit(EXIT_FAILURE);
+	perror(msg);
+	exit(EXIT_FAILURE);
 }
 
 #include "pipex.h"
@@ -63,7 +63,9 @@ int	ft_strncmp(const char *s1, const char *s2, int n)
 
 int	ft_strlen(const char *s)
 {
-	int	i = 0;
+	int	i;
+
+	i = 0;
 	while (s[i])
 		i++;
 	return (i);

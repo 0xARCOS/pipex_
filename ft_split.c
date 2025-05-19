@@ -1,46 +1,46 @@
 #include "pipex.h"
 
-static int word_count(const char *s, char c)
+static int	word_count(const char *s, char c)
 {
-    int count;
-    int in_word;
-    count = 0;
-    in_word = 0;
+	int	count;
+	int	in_word;
 
-    while (*s)
-    {
-        if (*s != c && in_word == 0)
-        {
-            in_word = 1;
-            count++;
-        }
-        else if (*s == c)
-            in_word = 0;
-        s++;
-    }
-    return (count);
+	count = 0;
+	in_word = 0;
+	while (*s)
+	{
+		if (*s != c && in_word == 0)
+		{
+			in_word = 1;
+			count++;
+		}
+		else if (*s == c)
+			in_word = 0;
+		s++;
+	}
+	return (count);
 }
 
-static char *get_word(const char *s, char c)
+static char	*get_word(const char *s, char c)
 {
-    int     len;
-    char    *word;
-    int     i;
+	int		len;
+	char	*word;
+	int		i;
 
-    len = 0;
-    while (s[len] && s[len] != c)
-        len++;
-    word = malloc(len + 1);
-    if (!word)
-        return (NULL);
-    i = 0;
-    while (i < len)
-    {
-        word[i] = s[i];
-        i++;
-    }
-    word[i] = '\0';
-    return (word);
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	word = malloc(len + 1);
+	if (!word)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		word[i] = s[i];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
 }
 
 static int	fill_words(char **res, const char *s, char c)
@@ -68,8 +68,8 @@ static int	fill_words(char **res, const char *s, char c)
 
 char	**ft_split(const char *s, char c)
 {
-	char	**res;
-	int		words;
+	char **res;
+	int words;
 
 	if (!s)
 		return (NULL);
