@@ -1,0 +1,9 @@
+# Object files
+*.o
+
+# Executables
+pipex
+
+# Temporary test files
+/tmp/pipex_out*
+/tmp/expected_out*
